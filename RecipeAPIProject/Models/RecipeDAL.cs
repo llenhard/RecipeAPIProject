@@ -25,9 +25,9 @@ namespace RecipeAPIProject.Models
             throw new Exception("API machine broke");
         }
 
-        public static JArray GetRecipes(string args)
+        public static JObject GetRecipes(string args)
         {
-            return JArray.Parse(GetData($"http://www.recipepuppy.com/api/{args}"));
+            return JObject.Parse(GetData($"http://www.recipepuppy.com/api/{args}"));
         }
     }
 }
