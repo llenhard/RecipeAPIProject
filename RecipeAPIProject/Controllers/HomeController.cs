@@ -19,7 +19,7 @@ namespace RecipeAPIProject.Controllers
         public ActionResult About()
         {
             
-            return View(RecipeDAL.GetRecipes(null)["results"][0]);
+            return View(RecipeDAL.GetRecipes(null)["results"]);
         }
 
         public ActionResult Contact()
