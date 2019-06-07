@@ -4,34 +4,32 @@
 
 
 
-@foreach (var fav in Favorites)
-{
-
-    @*<table>
-            <tr>
-                <th>Recipe</th>
-                <th>Ingredients</th>
-
-            </tr>
-
-            @foreach (var recipe in Model)
-            {
-                <tr>
-                    <td>@.Title</td>
-                    <td>@.Ingredients</td>
-                    web link
-
-                </tr>
-            }
 
 
-        </table>*@
+<table>
+    <tr>
+        <th>Recipe Title</th>
+        
+
+    </tr>
+    @foreach (var fav in Model)
+    {
+        <tr>
+            
+            <td>@fav.RecipeTitle</td>
+
+
+        </tr>
+
+    }
+
+    </table>
 
 
 
 
 
-}
+
 
 
 

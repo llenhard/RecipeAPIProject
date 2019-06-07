@@ -10,6 +10,8 @@ namespace RecipeAPIProject.Controllers
 {
     public class HomeController : Controller
     {
+        ApplicationDbContext ORM = new ApplicationDbContext();
+
         public ActionResult Index()
         {
            ViewBag.results = RecipeDAL.GetRecipes(null)["results"];
@@ -22,21 +24,14 @@ namespace RecipeAPIProject.Controllers
             return View(RecipeDAL.GetRecipes(null)["results"]);
         }
 
-        public ActionResult Contact()
+        public ActionResult Contact(List<Favorites> faves)
         {
             
 
-            return View();
+            return View(faves);
         }
 
-        public ActionResult JellyBean()
-        {
-
-            List<FavoriteRecipe> favoriteList = ORM.FavoriteRecipes.ToList();
-
-            return View(favoriteList);
-            
-        }
+       
 
 
     }
