@@ -12,6 +12,25 @@
 </form>
 
 
-@ViewBag.results
 
 
+
+
+<form action="../Home/" method="post">
+    @foreach (var item in @ViewBag.results)
+    {
+        <table>
+             <tr>
+                <th>Title</th>
+                <th>Ingredients</th>
+                <th>Thumbnail</th>
+
+                <td>@item["title"]</td><br />
+                <td>@item["ingredients"]</td><br />
+             </tr>
+        </table>
+
+        <input type="submit" value="Add To Favorites"><br
+        <img src="@item["thumbnail"] alt="Picture" />
+    }
+</form>
