@@ -1,5 +1,6 @@
 ﻿
 
+
 <form action="../" method="post" class="btn-default">
     <h3>Title</h3>
     <input type="text" name="Title" /><br />
@@ -11,27 +12,6 @@
 </form>
 
 
-
-<form action="/" method="post">
-    @for (int i = 0; i < ViewBag.results["results"].Count(); i++)
-    {
+@ViewBag.results
 
 
-        <table>
-
-
-
-            <tr>
-                <th>Title</th>
-                <th>Ingredients</th>
-                <th>Thumbnail</th>
-
-                <td>@ViewBag.results["results"][i]["title"] </td>
-                <td>@ViewBag.results["results"][i]["ingredients"]</td>
-                <td>@ViewBag.results["results"][i]["thumbnail"]</ td >
-            </tr>
-        </table>
-        <input type="submit" value="Add To Favorites"><br>
-
-    }
-</form>
