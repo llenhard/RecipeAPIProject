@@ -26,5 +26,16 @@ namespace RecipeAPIProject.Controllers
 
             return View();
         }
+
+        public ActionResult JellyBean()
+        {
+
+            List<FavoriteRecipe> favoriteList = ORM.FavoriteRecipes.ToList();
+
+            return View(favoriteList);
+            
+        }
+
+
     }
 }
