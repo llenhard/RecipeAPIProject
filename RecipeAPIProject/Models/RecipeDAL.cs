@@ -19,6 +19,7 @@ namespace RecipeAPIProject.Models
             if(response.StatusCode == HttpStatusCode.OK)
             {
                 StreamReader data = new StreamReader(response.GetResponseStream());
+                
                 return data.ReadToEnd();
             }
 

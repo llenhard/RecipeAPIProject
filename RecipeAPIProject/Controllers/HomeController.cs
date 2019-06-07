@@ -12,11 +12,13 @@ namespace RecipeAPIProject.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+           ViewBag.results = RecipeDAL.GetRecipes(null)["results"];
+           return View();
         }
 
         public ActionResult About()
         {
+            
             return View(RecipeDAL.GetRecipes(null)["results"][0]);
         }
 
