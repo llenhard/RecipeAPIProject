@@ -220,6 +220,7 @@
       <DependentUpon>Favorites.edmx</DependentUpon>
       <LastGenOutput>Favorites.Context.cs</LastGenOutput>
     </Content>
+    <Content Include="Models\Favorites.edmx.sql" />
     <Content Include="Models\Favorites.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Favorites.edmx</DependentUpon>
@@ -279,6 +280,7 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Home\SaveNewFavorite.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
