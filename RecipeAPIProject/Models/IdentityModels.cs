@@ -21,7 +21,7 @@ namespace RecipeAPIProject.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("RecipeDb", throwIfV1Schema: false)
         {
         }
 
