@@ -1,7 +1,16 @@
 ﻿@{
     ViewBag.Title = "About";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
 
-<p>Use this area to provide additional information.</p>
+<h1>@Model["title"]</h1>
+<h2>Ingredients</h2>
+
+@Model["ingredients"]
+<img src="@Model["thumbnail"]" alt="Picture" />
+
+
+<form action="../Home/Contact" method="post">
+    <button type="submit">Add To Favorites</button>
+</form>
+<p>Original Website:</p>
+@Model["href"]

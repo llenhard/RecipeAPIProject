@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Newtonsoft.Json.Linq;
+using RecipeAPIProject.Models;
 
 namespace RecipeAPIProject.Controllers
 {
@@ -15,9 +17,7 @@ namespace RecipeAPIProject.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
+            return View(RecipeDAL.GetRecipes(null)["results"][0]);
         }
 
         public ActionResult Contact()
