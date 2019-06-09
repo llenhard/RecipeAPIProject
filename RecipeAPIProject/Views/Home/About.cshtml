@@ -7,10 +7,7 @@
 
 @Model["ingredients"]
 <img src="@Model["thumbnail"]" alt="Picture" />
+<a href="..\Home\SaveNewFavorite?title=@Model["title"]">Add Recipe To Favorites</a>
 
-
-<form action="../Home/Contact" method="post">
-    <button type="submit">Add To Favorites</button>
-</form>
 <p>Original Website:</p>
 @Model["href"]

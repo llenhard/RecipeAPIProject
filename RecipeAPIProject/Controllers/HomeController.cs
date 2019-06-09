@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Microsoft.AspNet.Identity;
 using Newtonsoft.Json.Linq;
 using RecipeAPIProject.Models;
 
@@ -10,7 +11,7 @@ namespace RecipeAPIProject.Controllers
 {
     public class HomeController : Controller
     {
-        ApplicationDbContext ORM = new ApplicationDbContext();
+        private RecipeDbEntities ORM = new RecipeDbEntities();
 
         public ActionResult Index()
         {
@@ -21,7 +22,7 @@ namespace RecipeAPIProject.Controllers
         public ActionResult About()
         {
             
-            return View(RecipeDAL.GetRecipes(null)["results"]);
+            return View(RecipeDAL.GetRecipes(null)["results"][0]);
         }
 
         public ActionResult Contact(List<Favorites> faves)
@@ -31,8 +32,15 @@ namespace RecipeAPIProject.Controllers
             return View(faves);
         }
 
-       
-
-
+        public ActionResult SaveNewFavorite(string title)
+        {
+            string userId = User.Identity.GetUserId();
+            Favorites newFav = new Favorites();
+            newFav.UserID = userId;
+            newFav.RecipeTitle = title;
+            ORM.Favorites.Add(newFav);
+            ORM.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
