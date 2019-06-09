@@ -26,7 +26,7 @@ namespace RecipeAPIProject.Controllers
             return View(parsed);
         }
 
-        public ActionResult Contact()
+        public ActionResult Contact(List<Favorites> faves)
         {
             List<JObject> favorites = new List<JObject>();
             string userId = User.Identity.GetUserId();
@@ -72,6 +72,7 @@ namespace RecipeAPIProject.Controllers
             ORM.SaveChanges();
             
             return RedirectToAction("../Home/Contact");
+            return View(faves);
         }
     }
 }

@@ -25,6 +25,8 @@ namespace RecipeAPIProject.Models
         {
         }
 
+        public object Favorites { get; internal set; }
+
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
