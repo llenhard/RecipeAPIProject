@@ -25,11 +25,11 @@ namespace RecipeAPIProject.Controllers
             return View(RecipeDAL.GetRecipes(null)["results"][0]);
         }
 
-        public ActionResult Contact()
+        public ActionResult Contact(List<Favorites> faves)
         {
             
 
-            return View();
+            return View(faves);
         }
 
         public ActionResult SaveNewFavorite(string title)
