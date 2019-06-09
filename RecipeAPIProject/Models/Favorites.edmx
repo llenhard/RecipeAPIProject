@@ -11,7 +11,7 @@
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="UserID" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="RecipeTitle" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="RecipeTitle" Type="nvarchar" MaxLength="300" Nullable="false" />
         </EntityType>
         <EntityContainer Name="RecipeDbModelStoreContainer">
           <EntitySet Name="Favorites" EntityType="Self.Favorites" Schema="dbo" store:Type="Tables" />
@@ -27,7 +27,7 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="UserID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="RecipeTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="RecipeTitle" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
         <EntityContainer Name="RecipeDbEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Favorites" EntityType="Self.Favorites" />

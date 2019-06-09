@@ -1,36 +1,37 @@
-﻿
-
-
-<form action="../" method="post" class="btn-default">
-    <h3>Title</h3>
-    <input type="text" name="Title" /><br />
-    <p>Or</p>
-    <h3>Ingredients</h3>
-    <input type="text" name="Engredients" />
-
-    <input type="submit" class=" btn-danger" />
+﻿<br />
+<form action="/Home/Index" method="get">
+    <select name="type" value="q=">
+        <option value="q=">Search</option>
+        <option value="i=">By ingredients(',' between each)</option>
+    </select>
+    <input type="text" required placeholder="Search" name="input"/>
+    <input type="submit" value="Search" />
 </form>
-
-
-
-
-
-
-<form action="../Home/" method="post">
-    @foreach (var item in @ViewBag.results)
-    {
-        <table>
-             <tr>
-                <th>Title</th>
-                <th>Ingredients</th>
-                <th>Thumbnail</th>
-
-                <td>@item["title"]</td><br />
-                <td>@item["ingredients"]</td><br />
-             </tr>
-        </table>
-
-        <input type="submit" value="Add To Favorites"><br
-        <img src="@item["thumbnail"] alt="Picture" />
-    }
+<br />
+<form action="/Home/SaveNewFavorite" method="post">
+    <table>
+        <tr>
+            <th>Item</th>
+            <th>Name</th>
+            <th>Ingredients</th>
+            <th>Favorite</th>
+        </tr>
+        @foreach(var item in ViewBag.results)
+        {
+            <tr>
+                <td>
+                    <img src='@item["thumbnail"]' />
+                </td>
+                <td>
+                    <a href="../Home/About?item=@item">@item["title"]</a>
+                </td>
+                <td>
+                    @item["ingredients"]
+                </td>
+                <td>
+                    <button type="submit" name="item" value='@item'>Add Favorite</button>
+                </td>
+            </tr>
+        }
+    </table>
 </form>

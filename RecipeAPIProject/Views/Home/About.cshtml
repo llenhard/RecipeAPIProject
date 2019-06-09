@@ -3,14 +3,11 @@
 }
 
 <h1>@Model["title"]</h1>
-<h2>Ingredients</h2>
-
-@Model["ingredients"]
-<img src="@Model["thumbnail"]" alt="Picture" />
-
-
-<form action="../Home/Contact" method="post">
-    <button type="submit">Add To Favorites</button>
+<img src="@Model["thumbnail"]" alt="Picture" /><br /><br />
+<h4>Ingredients</h4>
+<h5>@Model["ingredients"]</h5><br />
+<form action="../Home/SaveNewFavorite">
+    <button type="submit" name="item" value='@Model'>Favorite</button>
 </form>
-<p>Original Website:</p>
-@Model["href"]
+<br />
+<a href='@Model["href"]'>Source</a>

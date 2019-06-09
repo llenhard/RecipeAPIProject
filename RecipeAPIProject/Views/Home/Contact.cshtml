@@ -1,37 +1,29 @@
-﻿
+﻿<h2>Favorites</h2>
 
-<h1>Your Favorites List</h1>
-
-
-
-@foreach (var fav in Favorites)
-{
-
-    @*<table>
-            <tr>
-                <th>Recipe</th>
-                <th>Ingredients</th>
-
-            </tr>
-
-            @foreach (var recipe in Model)
-            {
-                <tr>
-                    <td>@.Title</td>
-                    <td>@.Ingredients</td>
-                    web link
-
-                </tr>
-            }
-
-
-        </table>*@
-
-
-
-
-
-}
-
-
-
+<table style="width:115%">
+    <tr>
+        <th>Item</th>
+        <th>Name</th>
+        <th>Ingredients</th>
+        <th>Favorite</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                <img src='@item["thumbnail"]' />
+            </td>
+            <td>
+                <a href="../Home/About?item=@item">@item["title"]</a>
+            </td>
+            <td>
+                @item["ingredients"]
+            </td>
+            <td>
+                <form action="../Home/RemoveFavorite">
+                    <button type="submit" name="item" value='@item'>Remove Favorite</button>
+                </form>
+            </td>
+        </tr>
+    }
+</table>
