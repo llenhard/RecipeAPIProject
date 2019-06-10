@@ -72,7 +72,6 @@ namespace RecipeAPIProject.Controllers
             ORM.SaveChanges();
             
             return RedirectToAction("../Home/Contact");
-            return View(faves);
         }
     }
 }
