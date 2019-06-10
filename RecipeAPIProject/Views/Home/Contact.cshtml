@@ -1,29 +1,33 @@
-<h2>Favorites</h2>
+<h1 style="font-size:100px;text-decoration:underline;color:black;">Favorites</h1>
 
-<table style="width:115%">
-    <tr>
-        <th>Item</th>
-        <th>Name</th>
-        <th>Ingredients</th>
-        <th>Favorite</th>
-    </tr>
-    @foreach (var item in Model)
-    {
+
+
+<div class="fav">
+    <table style="width:115%;text-decoration:underline;background-color:aqua">
+        
         <tr>
-            <td>
-                <img src='@item["thumbnail"]' />
-            </td>
-            <td>
-                <a href="../Home/About?item=@item">@item["title"]</a>
-            </td>
-            <td>
-                @item["ingredients"]
-            </td>
-            <td>
-                <form action="../Home/RemoveFavorite">
-                    <button type="submit" name="item" value='@item'>Remove Favorite</button>
-                </form>
-            </td>
+            <th style="font-size:30px">Item</th>
+            <th style="font-size:30px" >Name</th>
+            <th style="font-size:30px">Ingredients</th>
+            <th style="font-size:30px" >Remove</th>
         </tr>
-    }
-</table>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <img src='@item["thumbnail"]' style="width:75%" />
+                </td>
+                <td>
+                    <a href="../Home/About?item=@item">@item["title"]</a>
+                </td>
+                <td>
+                    @item["ingredients"]
+                </td>
+                <td>
+                    <form action="../Home/RemoveFavorite">
+                        <button type="submit" name="item" value='@item' class="btn-danger">Remove Favorite</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </table></div>
